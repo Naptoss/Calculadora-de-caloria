@@ -11,6 +11,6 @@ class foodAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Customer)
-admin.site.register(UserFoodItem)
+admin.site.register(UserFooditem)
 admin.site.register(Category)
 admin.site.register(Fooditem, foodAdmin)

@@ -1,14 +1,14 @@
-from email.policy import default
-from unicodedata import category
 from django.db import models
 from django.contrib.auth.models import User
+
+# Create your models here.
 
 
 class Customer(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200, null=True)
-    data_created = models.DateTimeField(auto_now_add=True, null=True)
+    date_created = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
         return str(self.name)
@@ -41,9 +41,9 @@ class Fooditem(models.Model):
     def __str__(self):
         return str(self.name)
 
-# for user page ---------------------------------------------------------------------------
+# for user page-------------------------------------------------------------
 
 
-class UserFoodItem(models.Model):
+class UserFooditem(models.Model):
     customer = models.ManyToManyField(Customer, blank=True)
     fooditem = models.ManyToManyField(Fooditem)

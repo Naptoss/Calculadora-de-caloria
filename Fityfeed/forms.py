@@ -7,16 +7,16 @@ from django.contrib.auth.forms import UserCreationForm
 class fooditemForm(ModelForm):
     class Meta:
         model = Fooditem
-        field = "__all__"
+        fields = "__all__"
 
 
 class addUserFooditem(ModelForm):
     class Meta:
-        model = UserFoodItem
-        fiels = "__all__"
+        model = UserFooditem
+        fields = "__all__"
 
 
 class createUserForm(UserCreationForm):
     class Meta:
         model = User
-        field = ['username', 'email', 'password1', 'password2']
+        fields = ['username', 'email', 'password1', 'password2']
